@@ -21,18 +21,24 @@ gibbs_seso_uhp_only <- function(niter, Gamma_hat, gamma_hat, s2_hat_Gamma, s2_ha
     .Call(`_FusioMR_gibbs_seso_uhp_only`, niter, Gamma_hat, gamma_hat, s2_hat_Gamma, s2_hat_gamma)
 }
 
+<<<<<<< HEAD
 my_rinvgamma <- function(n, shape, rate) {
     .Call(`_FusioMR_my_rinvgamma`, n, shape, rate)
 }
 
+=======
+>>>>>>> origin/main
 my_rinvwishart <- function(nu, S) {
     .Call(`_FusioMR_my_rinvwishart`, nu, S)
 }
 
+<<<<<<< HEAD
 mvrnormArma <- function(n, mu, sigma) {
     .Call(`_FusioMR_mvrnormArma`, n, mu, sigma)
 }
 
+=======
+>>>>>>> origin/main
 my_rdirichlet <- function(n, alpha) {
     .Call(`_FusioMR_my_rdirichlet`, n, alpha)
 }
