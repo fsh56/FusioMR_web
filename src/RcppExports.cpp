@@ -24,8 +24,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // gibbs_memo_joint
-List gibbs_memo_joint(int niter, NumericVector Gamma_hat_1, NumericVector Gamma_hat_2, NumericVector gamma_hat_1, NumericVector gamma_hat_2, NumericVector s2_hat_Gamma_1, NumericVector s2_hat_Gamma_2, NumericVector s2_hat_gamma_1, NumericVector s2_hat_gamma_2, double rho_eta, double q_chp1, double q_chp2);
-RcppExport SEXP _FusioMR_gibbs_memo_joint(SEXP niterSEXP, SEXP Gamma_hat_1SEXP, SEXP Gamma_hat_2SEXP, SEXP gamma_hat_1SEXP, SEXP gamma_hat_2SEXP, SEXP s2_hat_Gamma_1SEXP, SEXP s2_hat_Gamma_2SEXP, SEXP s2_hat_gamma_1SEXP, SEXP s2_hat_gamma_2SEXP, SEXP rho_etaSEXP, SEXP q_chp1SEXP, SEXP q_chp2SEXP) {
+List gibbs_memo_joint(int niter, NumericVector Gamma_hat_1, NumericVector Gamma_hat_2, NumericVector gamma_hat_1, NumericVector gamma_hat_2, NumericVector s_hat_Gamma_1, NumericVector s_hat_Gamma_2, NumericVector s_hat_gamma_1, NumericVector s_hat_gamma_2);
+RcppExport SEXP _FusioMR_gibbs_memo_joint(SEXP niterSEXP, SEXP Gamma_hat_1SEXP, SEXP Gamma_hat_2SEXP, SEXP gamma_hat_1SEXP, SEXP gamma_hat_2SEXP, SEXP s_hat_Gamma_1SEXP, SEXP s_hat_Gamma_2SEXP, SEXP s_hat_gamma_1SEXP, SEXP s_hat_gamma_2SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -34,14 +34,11 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< NumericVector >::type Gamma_hat_2(Gamma_hat_2SEXP);
     Rcpp::traits::input_parameter< NumericVector >::type gamma_hat_1(gamma_hat_1SEXP);
     Rcpp::traits::input_parameter< NumericVector >::type gamma_hat_2(gamma_hat_2SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type s2_hat_Gamma_1(s2_hat_Gamma_1SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type s2_hat_Gamma_2(s2_hat_Gamma_2SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type s2_hat_gamma_1(s2_hat_gamma_1SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type s2_hat_gamma_2(s2_hat_gamma_2SEXP);
-    Rcpp::traits::input_parameter< double >::type rho_eta(rho_etaSEXP);
-    Rcpp::traits::input_parameter< double >::type q_chp1(q_chp1SEXP);
-    Rcpp::traits::input_parameter< double >::type q_chp2(q_chp2SEXP);
-    rcpp_result_gen = Rcpp::wrap(gibbs_memo_joint(niter, Gamma_hat_1, Gamma_hat_2, gamma_hat_1, gamma_hat_2, s2_hat_Gamma_1, s2_hat_Gamma_2, s2_hat_gamma_1, s2_hat_gamma_2, rho_eta, q_chp1, q_chp2));
+    Rcpp::traits::input_parameter< NumericVector >::type s_hat_Gamma_1(s_hat_Gamma_1SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type s_hat_Gamma_2(s_hat_Gamma_2SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type s_hat_gamma_1(s_hat_gamma_1SEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type s_hat_gamma_2(s_hat_gamma_2SEXP);
+    rcpp_result_gen = Rcpp::wrap(gibbs_memo_joint(niter, Gamma_hat_1, Gamma_hat_2, gamma_hat_1, gamma_hat_2, s_hat_Gamma_1, s_hat_Gamma_2, s_hat_gamma_1, s_hat_gamma_2));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -92,6 +89,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// my_rinvgamma
+NumericVector my_rinvgamma(int n, double shape, double rate);
+RcppExport SEXP _FusioMR_my_rinvgamma(SEXP nSEXP, SEXP shapeSEXP, SEXP rateSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    Rcpp::traits::input_parameter< double >::type shape(shapeSEXP);
+    Rcpp::traits::input_parameter< double >::type rate(rateSEXP);
+    rcpp_result_gen = Rcpp::wrap(my_rinvgamma(n, shape, rate));
+    return rcpp_result_gen;
+END_RCPP
+}
 // my_rinvwishart
 arma::mat my_rinvwishart(double nu, arma::mat S);
 RcppExport SEXP _FusioMR_my_rinvwishart(SEXP nuSEXP, SEXP SSEXP) {
@@ -132,10 +142,11 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_FusioMR_fastSigLm", (DL_FUNC) &_FusioMR_fastSigLm, 2},
-    {"_FusioMR_gibbs_memo_joint", (DL_FUNC) &_FusioMR_gibbs_memo_joint, 12},
+    {"_FusioMR_gibbs_memo_joint", (DL_FUNC) &_FusioMR_gibbs_memo_joint, 9},
     {"_FusioMR_gibbs_semo_nohp", (DL_FUNC) &_FusioMR_gibbs_semo_nohp, 7},
     {"_FusioMR_gibbs_seso_nohp", (DL_FUNC) &_FusioMR_gibbs_seso_nohp, 5},
     {"_FusioMR_gibbs_seso_uhp_only", (DL_FUNC) &_FusioMR_gibbs_seso_uhp_only, 5},
+    {"_FusioMR_my_rinvgamma", (DL_FUNC) &_FusioMR_my_rinvgamma, 3},
     {"_FusioMR_my_rinvwishart", (DL_FUNC) &_FusioMR_my_rinvwishart, 2},
     {"_FusioMR_mvrnormArma", (DL_FUNC) &_FusioMR_mvrnormArma, 3},
     {"_FusioMR_my_rdirichlet", (DL_FUNC) &_FusioMR_my_rdirichlet, 2},

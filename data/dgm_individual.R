@@ -74,7 +74,6 @@
 #'   a_alpha = 0, b_alpha = 0,  # No pleiotropy
 #'   theta = 0.3
 #' )
-#'
 #' @export
 #' @author [Your Name]
 #' @seealso \code{\link{dgm_summary}} for summary-level GWAS data generation

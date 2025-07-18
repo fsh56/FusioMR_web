@@ -117,9 +117,6 @@ fusiomr <- function(b_exp,
   n_outcomes <- ncol(b_out)
   n_exposure <- ncol(b_exp)
   n_ivs <- nrow(b_exp)
-  if (n_sel < 3) {
-    warning("Less than 3 instruments selected. Results may be unreliable.")
-  }
 
   # Model Implementation
   results <- list()
@@ -130,6 +127,10 @@ fusiomr <- function(b_exp,
       sel_ivs_idx <- get_sel_idx(b_exp, se_exp, p_value_threshold)
       n_sel <- sum(sel_ivs_idx)
       cat(sprintf("Selected %d out of %d instruments (p < %g)\n", n_sel, n_ivs, p_value_threshold))
+
+      if (n_sel < 3) {
+        warning("Less than 3 instruments selected. Results may be unreliable.")
+      }
 
       # Select summary statistics
       b_exp_sel <- b_exp[sel_ivs_idx, , drop = FALSE]
@@ -231,8 +232,7 @@ fusiomr <- function(b_exp,
       burnin <- floor(niter * burnin_prop)
 
       res <- gibbs_memo_joint(niter, b_out[, 1], b_out[, 2], b_exp[, 1], b_exp[, 2],
-                              se_out[, 1]^2, se_out[, 2]^2, se_exp[, 1]^2, se_exp[, 2]^2,
-                              rho_eta=0.9, q_chp1=0.1, q_chp2=0.1)
+                              se_out[, 1], se_out[, 2], se_exp[, 1], se_exp[, 2])
       eta_true_1 <- rep(0, n_ivs)
       eta_true_2 <- rep(0, n_ivs)
       post_res <- label_flip_joint(res, eta_true_1, eta_true_2, niter, burnin_prop)

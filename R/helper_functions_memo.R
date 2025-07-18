@@ -1,6 +1,6 @@
 get_post_burnin_res <- function(res, niter, burnin_prop) {
   burnin <- floor(niter * burnin_prop)
-  post_res <- list(pst_tk = res$pst_tk[(burnin+1):niter],
+  post_res <- list(pst_tk = res$pst_tk[(burnin+1):niter, , drop = FALSE],
                    beta_1_tk = res$beta_1_tk[(burnin+1):niter],
                    beta_2_tk = res$beta_2_tk[(burnin+1):niter],
                    eta_1_tk = res$eta_1_tk[(burnin+1):niter],
