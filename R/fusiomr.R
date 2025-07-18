@@ -113,15 +113,10 @@ fusiomr <- function(b_exp,
 
   cat("Input validation completed.\n")
 
-  # IV selection
-  cat("Performing instrumental variable selection...\n")
-  sel_ivs_idx <- get_sel_idx(b_exp, se_exp, p_value_threshold)
-  n_sel <- sum(sel_ivs_idx)
+
   n_outcomes <- ncol(b_out)
   n_exposure <- ncol(b_exp)
   n_ivs <- nrow(b_exp)
-  cat(sprintf("Selected %d out of %d instruments (p < %g)\n", n_sel, n_ivs, p_value_threshold))
-
   if (n_sel < 3) {
     warning("Less than 3 instruments selected. Results may be unreliable.")
   }
@@ -130,6 +125,12 @@ fusiomr <- function(b_exp,
   results <- list()
   if (n_exposure == 1) { # Single Exposure
     if (n_outcomes == 1) { # Single outcome models
+      # IV selection
+      cat("Performing instrumental variable selection...\n")
+      sel_ivs_idx <- get_sel_idx(b_exp, se_exp, p_value_threshold)
+      n_sel <- sum(sel_ivs_idx)
+      cat(sprintf("Selected %d out of %d instruments (p < %g)\n", n_sel, n_ivs, p_value_threshold))
+
       # Select summary statistics
       b_exp_sel <- b_exp[sel_ivs_idx, , drop = FALSE]
       se_exp_sel <- se_exp[sel_ivs_idx, , drop = FALSE]
@@ -234,7 +235,7 @@ fusiomr <- function(b_exp,
                               rho_eta=0.9, q_chp1=0.1, q_chp2=0.1)
       eta_true_1 <- rep(0, n_ivs)
       eta_true_2 <- rep(0, n_ivs)
-      post_res <- label_flip_joint(res, eta_true_1, eta_true_2)
+      post_res <- label_flip_joint(res, eta_true_1, eta_true_2, niter, burnin_prop)
       # Print result summary
       print_summary_memo(post_res)
 

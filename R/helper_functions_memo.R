@@ -11,7 +11,7 @@ get_post_burnin_res <- function(res, niter, burnin_prop) {
   return(post_res)
 }
 
-label_flip_joint <- function(res, eta_true_1, eta_true_2) {
+label_flip_joint <- function(res, eta_true_1, eta_true_2, niter, burnin_prop) {
   post_res = get_post_burnin_res(res, niter, burnin_prop)
   p00_post = post_res$pst_tk[, 1]
   p01_post = post_res$pst_tk[, 2]
@@ -42,7 +42,7 @@ label_flip_joint <- function(res, eta_true_1, eta_true_2) {
   }
 
   est_pval1 <- 2 * (1 - stats::pnorm(abs(b1_mean / b1_sd)))
-  est_pval2 <- 2 * (1 - stats::pnorm(abs(b2_mean / b2_se)))
+  est_pval2 <- 2 * (1 - stats::pnorm(abs(b2_mean / b2_sd)))
 
   return(list(beta_est1 = b1_mean,
               beta_se1 = b1_sd,
