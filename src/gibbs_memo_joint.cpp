@@ -357,8 +357,8 @@ List gibbs_memo_joint(int niter,
   }
 
   List res = List::create(
-    Named("beta_1") = beta_1_tk,
-    Named("beta_2") = beta_2_tk,
+    Named("beta_1_tk") = beta_1_tk,
+    Named("beta_2_tk") = beta_2_tk,
     Named("alpha_1_tk") = alpha_1_tk,
     Named("alpha_2_tk") = alpha_2_tk,
     Named("eta_1_tk") = eta_1_tk,

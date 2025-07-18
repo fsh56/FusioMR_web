@@ -224,22 +224,22 @@ fusiomr <- function(b_exp,
     if (n_outcomes == 2) { # Multiple Outcomes
       # Model 5: memo uhp+chp
       cat("\n--- Running Model: Multiple Exposure Multiple Outcomes---\n")
-
-
       # Gibbs
       cat("Running Gibbs sampling...\n")
       cat(sprintf("Iterations: %d, Burn-in: %d\n", niter, floor(niter * burnin_prop)))
       burnin <- floor(niter * burnin_prop)
-
       res <- gibbs_memo_joint(niter, b_out[, 1], b_out[, 2], b_exp[, 1], b_exp[, 2],
                               se_out[, 1], se_out[, 2], se_exp[, 1], se_exp[, 2])
+
+      # Debug the results
+      # debug_gibbs_results(res, niter, burnin_prop)
+
       eta_true_1 <- rep(0, n_ivs)
       eta_true_2 <- rep(0, n_ivs)
-      post_res <- label_flip_joint(res, eta_true_1, eta_true_2, niter, burnin_prop)
-      # Print result summary
-      print_summary_memo(post_res)
 
-      # Returns
+      # Use debug version of label_flip_joint
+      post_res <- label_flip_joint(res, eta_true_1, eta_true_2, niter, burnin_prop)
+      print_summary_memo(post_res)
       results <- list(
         est = c(post_res$beta_est1, post_res$beta_est2),
         se = c(post_res$beta_se1, post_res$beta_se2),

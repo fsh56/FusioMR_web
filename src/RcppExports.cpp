@@ -89,7 +89,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-<<<<<<< HEAD
 // my_rinvgamma
 NumericVector my_rinvgamma(int n, double shape, double rate);
 RcppExport SEXP _FusioMR_my_rinvgamma(SEXP nSEXP, SEXP shapeSEXP, SEXP rateSEXP) {
@@ -103,8 +102,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-=======
->>>>>>> origin/main
 // my_rinvwishart
 arma::mat my_rinvwishart(double nu, arma::mat S);
 RcppExport SEXP _FusioMR_my_rinvwishart(SEXP nuSEXP, SEXP SSEXP) {
@@ -117,7 +114,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-<<<<<<< HEAD
 // mvrnormArma
 arma::mat mvrnormArma(int n, arma::vec mu, arma::mat sigma);
 RcppExport SEXP _FusioMR_mvrnormArma(SEXP nSEXP, SEXP muSEXP, SEXP sigmaSEXP) {
@@ -131,8 +127,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-=======
->>>>>>> origin/main
 // my_rdirichlet
 NumericVector my_rdirichlet(int n, NumericVector alpha);
 RcppExport SEXP _FusioMR_my_rdirichlet(SEXP nSEXP, SEXP alphaSEXP) {
@@ -152,13 +146,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_FusioMR_gibbs_semo_nohp", (DL_FUNC) &_FusioMR_gibbs_semo_nohp, 7},
     {"_FusioMR_gibbs_seso_nohp", (DL_FUNC) &_FusioMR_gibbs_seso_nohp, 5},
     {"_FusioMR_gibbs_seso_uhp_only", (DL_FUNC) &_FusioMR_gibbs_seso_uhp_only, 5},
-<<<<<<< HEAD
     {"_FusioMR_my_rinvgamma", (DL_FUNC) &_FusioMR_my_rinvgamma, 3},
     {"_FusioMR_my_rinvwishart", (DL_FUNC) &_FusioMR_my_rinvwishart, 2},
     {"_FusioMR_mvrnormArma", (DL_FUNC) &_FusioMR_mvrnormArma, 3},
-=======
-    {"_FusioMR_my_rinvwishart", (DL_FUNC) &_FusioMR_my_rinvwishart, 2},
->>>>>>> origin/main
     {"_FusioMR_my_rdirichlet", (DL_FUNC) &_FusioMR_my_rdirichlet, 2},
     {NULL, NULL, 0}
 };

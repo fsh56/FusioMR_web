@@ -6,10 +6,7 @@
 using namespace Rcpp;
 using namespace arma;
 
-<<<<<<< HEAD
-=======
 arma::mat my_rinvwishart(double nu, const arma::mat S);
->>>>>>> origin/main
 arma::mat mvrnormArma(int n, arma::vec mu, arma::mat sigma);
 
 // [[Rcpp::export]]
