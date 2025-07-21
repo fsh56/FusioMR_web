@@ -14,7 +14,7 @@ This R package supports four different analytical models:
 - **Model 1**: Single Exposure, Single Outcome, No Correlated Horizontal Pleiotropy
 - **Model 2**: Single Exposure, Single Outcome, With Correlated Horizontal Pleiotropy 
 - **Model 3**: Single Exposure, Multiple Outcomes, No Correlated Horizontal Pleiotropy
-- **Model 4**: Single Exposure, Multiple Outcomes, With Correlated Horizontal Pleiotropy
+- **Model 4**: Multiple Exposure, Multiple Outcomes, With both Uncorrelated and Correlated Horizontal Pleiotropy
 
 
 ## Function Reference
@@ -35,6 +35,10 @@ This R package supports four different analytical models:
 | `p_value_threshold` | numeric | IV selection p-value threshold | `1e-3` |
 | `niter` | integer | Number of Gibbs sampling iterations | `20000` |
 | `burnin_prop` | numeric | Proportion of iterations to discard as burn-in | `0.5` |
+
+**Note**: For multiple exposure, multiple outcome models, the CHP parameter is automatically set to `TRUE` regardless of user input. 
+This is because the model is specifically designed for complex trait exposures where both correlated horizontal pleiotropy (CHP) 
+and uncorrelated horizontal pleiotropy (UHP) effects are expected and need to be accounted for by default.
 
 **Returns**: 
 The `fusiomr()` function returns a list containing:
@@ -70,7 +74,7 @@ devtools::install_github("kangbw702/FusioMR")
 
 ## Quick Start
 
-### Single Outcome Analysis
+### Single Exposure Single Outcome Analysis
 
 ```r
 library(FusioMR)
@@ -101,8 +105,7 @@ print(result)
 #> [1] 1.56024e-05
 ```
 
-### Multiple Outcomes Analysis
-
+### Single Outcome Multiple Outcomes Analysis
 ```r
 library(FusioMR)
 
@@ -136,6 +139,49 @@ print(result_multi)
 #> 
 #> $pval
 #> [1] 1.298748e-02 4.131123e-05
+```
+
+
+### Multiple Exposure Analysis
+```r
+library(FusioMR)
+
+# Prepare your input data
+b_exp_multi <- cbind(
+  exposure1 = c(0.12, 0.08, 0.15, 0.09),
+  exposure2 = c(0.14, 0.06, 0.17, 0.09)
+)
+se_exp_multi <- cbind(
+  exposure1 = c(0.01, 0.01, 0.02, 0.01),
+  exposure2 = c(0.025, 0.01, 0.03, 0.075)
+)
+b_out_multi <- cbind(                
+  outcome1 = c(0.05, 0.03, 0.07, 0.04),
+  outcome2 = c(0.08, 0.06, 0.11, 0.07)
+)
+se_out_multi <- cbind(               
+  outcome1 = c(0.02, 0.02, 0.03, 0.02),
+  outcome2 = c(0.025, 0.02, 0.03, 0.025)
+)
+
+# Run multiple outcomes analysis
+result_multi <- fusiomr(
+  b_exp = b_exp_multi,
+  se_exp = se_exp_multi,
+  b_out = b_out_multi,
+  se_out = se_out_multi
+)
+
+# View results for both outcomes
+print(result_multi)
+#>$est
+#>[1] 0.4340691 0.7533179
+#>
+#>$se
+#>[1] 0.1081232 0.4509967
+#>
+#>$pval
+#>[1] 5.955244e-05 9.485208e-02
 ```
 
 ## Advanced Usage
