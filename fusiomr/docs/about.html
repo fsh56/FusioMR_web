@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -29,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -68,6 +71,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 
 
@@ -229,6 +233,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -236,6 +303,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -358,15 +435,15 @@ HTML.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtree93320b0f05ecfac728f7d4f87b1d575d55ccdda8targetblank93320b0a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtreeefe68c81f5175ec39e69c90c3ef2226b092d81edtargetblankefe68c8a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/kangbw702/FusioMR/tree/93320b0f05ecfac728f7d4f87b1d575d55ccdda8" target="_blank">93320b0</a>
+<a href="https://github.com/kangbw702/FusioMR/tree/efe68c81f5175ec39e69c90c3ef2226b092d81ed" target="_blank">efe68c8</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtree93320b0f05ecfac728f7d4f87b1d575d55ccdda8targetblank93320b0a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtreeefe68c81f5175ec39e69c90c3ef2226b092d81edtargetblankefe68c8a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -376,7 +453,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/kangbw702/FusioMR/tree/93320b0f05ecfac728f7d4f87b1d575d55ccdda8" target="_blank">93320b0</a>.
+<a href="https://github.com/kangbw702/FusioMR/tree/efe68c81f5175ec39e69c90c3ef2226b092d81ed" target="_blank">efe68c8</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -394,14 +471,12 @@ Ignored files:
     Ignored:    .Rproj.user/
     Ignored:    src/gibbs_memo_joint.o
 
-Untracked files:
-    Untracked:  fusiomr/analysis/data_analysis.Rmd
-    Untracked:  fusiomr/analysis/software_tutorial.Rmd
-
 Unstaged changes:
-    Modified:   fusiomr/analysis/_site.yml
+    Modified:   README.md
     Modified:   fusiomr/analysis/about.Rmd
-    Modified:   fusiomr/analysis/index.Rmd
+    Modified:   fusiomr/analysis/data_analysis.Rmd
+    Modified:   fusiomr/analysis/license.Rmd
+    Modified:   fusiomr/analysis/style.css
     Deleted:    tutorial/.Rprofile
     Deleted:    tutorial/.gitattributes
     Deleted:    tutorial/.gitignore
@@ -460,6 +535,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/kangbw702/FusioMR/blob/ae124caca5910e6c9a6c46c8663f55ec7767323e/fusiomr/analysis/about.Rmd" target="_blank">ae124ca</a>
+</td>
+<td>
+Sihao
+</td>
+<td>
+2025-07-23
+</td>
+<td>
+update tutorial
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/kangbw702/FusioMR/ae124caca5910e6c9a6c46c8663f55ec7767323e/fusiomr/docs/about.html" target="_blank">ae124ca</a>
+</td>
+<td>
+Sihao
+</td>
+<td>
+2025-07-23
+</td>
+<td>
+update tutorial
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -528,6 +637,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -560,6 +671,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

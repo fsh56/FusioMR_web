@@ -2,12 +2,12 @@
 title: "Data Analysis"
 output:
   workflowr::wflow_html:
-    toc: yes
+    toc: true
 editor_options:
   chunk_output_type: console
 ---
 
-# Data Application 1
+# Data Application 1 
 
 # Data Application 2 
 
