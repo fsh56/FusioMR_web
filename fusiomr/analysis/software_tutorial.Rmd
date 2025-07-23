@@ -2,7 +2,7 @@
 title: "Software Tutorial"
 output:
   workflowr::wflow_html:
-    toc: false
+    toc: yes
 editor_options:
   chunk_output_type: console
 ---

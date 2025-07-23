@@ -1,0 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: #6e42c1ea !important;
+}
+
+.navbar a {
+  color: #ffffff !important;
+}
