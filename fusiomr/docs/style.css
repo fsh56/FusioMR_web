@@ -1,11 +1,26 @@
-html {
-  scroll-behavior: smooth;
-}
+/* ----- GLOBAL BRAND COLOUR ------------------------------------ */
+:root{
+    /* one spot to tweak later */
+    --fusio-purple: #593797ea;
+  }
 
-.navbar {
-  background-color: #6e42c1ea !important;
-}
+  /* ----- NAVBAR -------------------------------------------------- */
+  .navbar                     { background: var(--fusio-purple) !important; border: none; }
+  .navbar .navbar-brand,
+  .navbar-nav > li > a        { color: #fff !important; }          /* default text */
+  .navbar-nav > li > a:hover,
+  .navbar-nav > li > a:focus,
+  .navbar-nav > li.active > a {                                      /* active / hover */
+    background: var(--fusio-purple) !important;
+    color: #fff !important;
+  }
 
-.navbar a {
-  color: #ffffff !important;
-}
+  /* ----- LIST‑GROUP “CARD” HEADER -------------------------------- */
+  .list-group-item.active,
+  .list-group-item.active:hover,
+  .list-group-item.active:focus{
+    background: var(--fusio-purple) !important;
+    border‑color: var(--fusio-purple) !important;
+  }
+
+

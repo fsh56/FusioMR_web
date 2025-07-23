@@ -80,7 +80,7 @@ devtools::install_github("kangbw702/FusioMR")
 
 ## STEP2: Run Estimation
 <!--edit-->
-### Single Exposure Single Outcome Analysis
+### Single Exposure Single Outcome
 Simply, with required summary statistics, you can run estimation for single exposure single outcome as below:
 ```r
 library(FusioMR)
@@ -130,7 +130,7 @@ result <- fusiomr(
 
 
 
-### Single Exposure Multiple Outcome Analysis
+### Single Exposure Multiple Outcome
 Simply, with required summary statistics, you can run estimation for single exposure multiple outcomes as below:
 ```r
 library(FusioMR)
@@ -168,7 +168,7 @@ Running this, you are expected to get the estimation results in similar format:
 #> [1] 1.298748e-02 4.131123e-05
 ```
 
-### Multiple Exposure Multiple Outcome Analysis
+### Multiple Exposure Multiple Outcome
 Simply, with required summary statistics, you can run estimation for multiple exposure multiple outcomes as below:
 ```r
 library(FusioMR)

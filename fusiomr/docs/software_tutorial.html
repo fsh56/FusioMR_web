@@ -71,6 +71,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 
 
@@ -518,15 +519,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtreeae124caca5910e6c9a6c46c8663f55ec7767323etargetblankae124caa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtree5911ca0e0f40f807aec8177aaf15ed01658f00eatargetblank5911ca0a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/kangbw702/FusioMR/tree/ae124caca5910e6c9a6c46c8663f55ec7767323e" target="_blank">ae124ca</a>
+<a href="https://github.com/kangbw702/FusioMR/tree/5911ca0e0f40f807aec8177aaf15ed01658f00ea" target="_blank">5911ca0</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtreeae124caca5910e6c9a6c46c8663f55ec7767323etargetblankae124caa"
+id="strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtree5911ca0e0f40f807aec8177aaf15ed01658f00eatargetblank5911ca0a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -536,7 +537,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/kangbw702/FusioMR/tree/ae124caca5910e6c9a6c46c8663f55ec7767323e" target="_blank">ae124ca</a>.
+<a href="https://github.com/kangbw702/FusioMR/tree/5911ca0e0f40f807aec8177aaf15ed01658f00ea" target="_blank">5911ca0</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -557,9 +558,9 @@ Ignored files:
 Unstaged changes:
     Modified:   README.md
     Modified:   fusiomr/analysis/_site.yml
-    Modified:   fusiomr/analysis/data_analysis.Rmd
     Modified:   fusiomr/analysis/index.Rmd
     Modified:   fusiomr/analysis/software_tutorial.Rmd
+    Modified:   fusiomr/analysis/style.css
     Deleted:    tutorial/.Rprofile
     Deleted:    tutorial/.gitattributes
     Deleted:    tutorial/.gitignore
@@ -619,6 +620,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/kangbw702/FusioMR/blob/5911ca0e0f40f807aec8177aaf15ed01658f00ea/fusiomr/analysis/software_tutorial.Rmd" target="_blank">5911ca0</a>
+</td>
+<td>
+Sihao
+</td>
+<td>
+2025-07-23
+</td>
+<td>
+update tutorial
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/kangbw702/FusioMR/5911ca0e0f40f807aec8177aaf15ed01658f00ea/fusiomr/docs/software_tutorial.html" target="_blank">5911ca0</a>
+</td>
+<td>
+Sihao
+</td>
+<td>
+2025-07-23
+</td>
+<td>
+update tutorial
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -804,9 +839,8 @@ devtools::install_github(&quot;kangbw702/FusioMR&quot;)</code></pre>
 <div id="step2-run-estimation" class="section level2">
 <h2>STEP2: Run Estimation</h2>
 <!--edit-->
-<div id="single-exposure-single-outcome-analysis"
-class="section level3">
-<h3>Single Exposure Single Outcome Analysis</h3>
+<div id="single-exposure-single-outcome" class="section level3">
+<h3>Single Exposure Single Outcome</h3>
 <p>Simply, with required summary statistics, you can run estimation for
 single exposure single outcome as below:</p>
 <pre class="r"><code>library(FusioMR)
@@ -851,9 +885,8 @@ parameters:</p>
   p_value_threshold = 5e-8 # More stringent threshold
 )</code></pre>
 </div>
-<div id="single-exposure-multiple-outcome-analysis"
-class="section level3">
-<h3>Single Exposure Multiple Outcome Analysis</h3>
+<div id="single-exposure-multiple-outcome" class="section level3">
+<h3>Single Exposure Multiple Outcome</h3>
 <p>Simply, with required summary statistics, you can run estimation for
 single exposure multiple outcomes as below:</p>
 <pre class="r"><code>library(FusioMR)
@@ -888,9 +921,8 @@ similar format:</p>
 #&gt; $pval
 #&gt; [1] 1.298748e-02 4.131123e-05</code></pre>
 </div>
-<div id="multiple-exposure-multiple-outcome-analysis"
-class="section level3">
-<h3>Multiple Exposure Multiple Outcome Analysis</h3>
+<div id="multiple-exposure-multiple-outcome" class="section level3">
+<h3>Multiple Exposure Multiple Outcome</h3>
 <p>Simply, with required summary statistics, you can run estimation for
 multiple exposure multiple outcomes as below:</p>
 <pre class="r"><code>library(FusioMR)

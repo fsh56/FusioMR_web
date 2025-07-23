@@ -35,6 +35,6 @@ In the following, we provide a brief tutorial of our FusioMR model including the
 ## Overview of FusioMR
 <!--edit-->
 
-## References
+# References
 <!--edit-->
 
