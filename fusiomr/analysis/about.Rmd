@@ -7,4 +7,4 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+This website provide supporting information for the FusioMR R package which you can find at https://github.com/kangbw702/FusioMR. Hope it offers clear instructions you need to get started with the package. The webpage is still working in progress. 

@@ -6,6 +6,7 @@ output:
 editor_options:
   chunk_output_type: console
 ---
+<!--edit-->
 
 What license are you using for your code? See [choosealicense.com][choose] for
 help deciding. It's a convention to save a file `LICENSE` in the root of your

@@ -5,6 +5,10 @@ navbar:
   left:
   - text: Home
     href: index.html
+  - text: Software Tutorial
+    href: software_tutorial.html
+  - text: Data Analysis
+    href: data_analysis.html
   - text: About
     href: about.html
   - text: License

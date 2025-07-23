@@ -1,0 +1,14 @@
+---
+title: "Data Analysis"
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+# Data Application 1
+
+# Data Application 2 
+
+# Data Application 3
