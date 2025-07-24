@@ -1,17 +1,24 @@
-name: "FusioMR_web"
+name: "fusiomr"
 output_dir: ../docs
 navbar:
-  title: "FusioMR_web"
+  title: "FusioMR"
   left:
-  - text: Home
+  - text: "Home"
     href: index.html
-  - text: About
+  - text: "Software Tutorial"
+    href: software_tutorial.html
+  - text: "Data Analysis"
+    href: data_analysis.html
+  - text: "About"
     href: about.html
-  - text: License
+  - text: "License"
     href: license.html
 output:
   workflowr::wflow_html:
-    toc: yes
-    toc_float: yes
+    logo: false
+    toc: true
+    toc_float: true
     theme: cosmo
     highlight: textmate
+    css: style.css
+    baseurl: "/FusioMR_web"

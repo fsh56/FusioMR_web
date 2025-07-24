@@ -325,7 +325,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">fusiomr</a>
+      <a class="navbar-brand" href="index.html">FusioMR</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -364,7 +364,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -375,8 +375,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -389,12 +389,12 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
-<strong>Knit directory:</strong> <code>fusiomr/</code> <span
+<strong>Knit directory:</strong> <code>FusioMR_web/</code> <span
 class="glyphicon glyphicon-question-sign" aria-hidden="true"
 title="This is the local directory in which the code in this file was executed.">
 </span>
@@ -414,33 +414,36 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtreec0c14013ff2fa1b482c742be2f1c73c4ad1de3a7targetblankc0c1401a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomfsh56FusioMRwebtreea1e7fafe1e87a6e64048ff2bc408dd17a8d5c798targetblanka1e7fafa">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/kangbw702/FusioMR/tree/c0c14013ff2fa1b482c742be2f1c73c4ad1de3a7" target="_blank">c0c1401</a>
+<a href="https://github.com/fsh56/FusioMR_web/tree/a1e7fafe1e87a6e64048ff2bc408dd17a8d5c798" target="_blank">a1e7faf</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomkangbw702FusioMRtreec0c14013ff2fa1b482c742be2f1c73c4ad1de3a7targetblankc0c1401a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomfsh56FusioMRwebtreea1e7fafe1e87a6e64048ff2bc408dd17a8d5c798targetblanka1e7fafa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -450,7 +453,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/kangbw702/FusioMR/tree/c0c14013ff2fa1b482c742be2f1c73c4ad1de3a7" target="_blank">c0c1401</a>.
+<a href="https://github.com/fsh56/FusioMR_web/tree/a1e7fafe1e87a6e64048ff2bc408dd17a8d5c798" target="_blank">a1e7faf</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -468,8 +471,23 @@ Ignored files:
     Ignored:    .Rproj.user/
     Ignored:    src/gibbs_memo_joint.o
 
+Untracked files:
+    Untracked:  analysis/data_analysis.Rmd
+    Untracked:  analysis/software_tutorial.Rmd
+    Untracked:  analysis/style.css
+
 Unstaged changes:
+    Modified:   analysis/_site.yml
+    Modified:   analysis/about.Rmd
+    Modified:   analysis/index.Rmd
+    Modified:   analysis/license.Rmd
     Modified:   src/FusioMR.so
+    Modified:   src/RcppExports.o
+    Modified:   src/fastlm.o
+    Modified:   src/gibbs_semo_nohp.o
+    Modified:   src/gibbs_seso_nohp.o
+    Modified:   src/gibbs_seso_uhp_only.o
+    Modified:   src/utils.o
 
 </code></pre>
 <p>
@@ -486,11 +504,10 @@ have uncommitted changes.
 <div id="versions" class="tab-pane fade">
 <p>
 These are the previous versions of the repository in which changes were
-made to the R Markdown (<code>fusiomr/analysis/index.Rmd</code>) and
-HTML (<code>fusiomr/docs/index.html</code>) files. If you’ve configured
-a remote Git repository (see <code>?wflow_git_remote</code>), click on
-the hyperlinks in the table below to view the files as they were in that
-past version.
+made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML
+(<code>docs/index.html</code>) files. If you’ve configured a remote Git
+repository (see <code>?wflow_git_remote</code>), click on the hyperlinks
+in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -519,7 +536,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/kangbw702/FusioMR/blob/c0c14013ff2fa1b482c742be2f1c73c4ad1de3a7/fusiomr/analysis/index.Rmd" target="_blank">c0c1401</a>
+<a href="https://github.com/fsh56/FusioMR_web/blob/a1e7fafe1e87a6e64048ff2bc408dd17a8d5c798/analysis/index.Rmd" target="_blank">a1e7faf</a>
 </td>
 <td>
 Sihao
@@ -528,177 +545,24 @@ Sihao
 2025-07-24
 </td>
 <td>
-Initial FusioMR website
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/kangbw702/FusioMR/eca6ebcdb1a1354a8bd25e00c849993d12e5272f/fusiomr/docs/index.html" target="_blank">eca6ebc</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update tutorial
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/kangbw702/FusioMR/blob/efe68c81f5175ec39e69c90c3ef2226b092d81ed/fusiomr/analysis/index.Rmd" target="_blank">efe68c8</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update tutorial
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/kangbw702/FusioMR/efe68c81f5175ec39e69c90c3ef2226b092d81ed/fusiomr/docs/index.html" target="_blank">efe68c8</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update tutorial
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/kangbw702/FusioMR/blob/5911ca0e0f40f807aec8177aaf15ed01658f00ea/fusiomr/analysis/index.Rmd" target="_blank">5911ca0</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update tutorial
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/kangbw702/FusioMR/5911ca0e0f40f807aec8177aaf15ed01658f00ea/fusiomr/docs/index.html" target="_blank">5911ca0</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update tutorial
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/kangbw702/FusioMR/blob/ae124caca5910e6c9a6c46c8663f55ec7767323e/fusiomr/analysis/index.Rmd" target="_blank">ae124ca</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update tutorial
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/kangbw702/FusioMR/ae124caca5910e6c9a6c46c8663f55ec7767323e/fusiomr/docs/index.html" target="_blank">ae124ca</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update tutorial
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/kangbw702/FusioMR/blob/93320b0f05ecfac728f7d4f87b1d575d55ccdda8/fusiomr/analysis/index.Rmd" target="_blank">93320b0</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update web
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/kangbw702/FusioMR/93320b0f05ecfac728f7d4f87b1d575d55ccdda8/fusiomr/docs/index.html" target="_blank">93320b0</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
-update web
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/kangbw702/FusioMR/blob/acc26fbbc6e089d801d780ac5e10bf52cb816052/fusiomr/analysis/index.Rmd" target="_blank">acc26fb</a>
-</td>
-<td>
-Sihao
-</td>
-<td>
-2025-07-23
-</td>
-<td>
 Start workflowr project.
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/fsh56/FusioMR_web/9feae2f0e0f190072b3111d30f22403dd027fa0b/docs/index.html" target="_blank">9feae2f</a>
+</td>
+<td>
+Sihao
+</td>
+<td>
+2025-07-24
+</td>
+<td>
+Move docs to root
 </td>
 </tr>
 </tbody>
@@ -711,9 +575,7 @@ Start workflowr project.
 <div id="weclome-to-the-fusiomr-website" class="section level1">
 <h1>Weclome to the FusioMR website :)</h1>
 <p>Here are some useful links:</p>
-<p><a href="...">Paper</a><!--edit--></p>
 <p><a href="https://github.com/kangbw702/FusioMR">Software</a></p>
-<p><a href=".pdf">Slides</a><!--edit--></p>
 </div>
 <div id="fusiomr-in-three-sentences" class="section level1">
 <h1>FusioMR in three sentences</h1>
