@@ -1,0 +1,36 @@
+---
+title: "FusioMR"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: yes
+editor_options:
+  chunk_output_type: console
+---
+
+# Weclome to the FusioMR website :)
+Here are some useful links:
+ 
+ [Software](https://github.com/kangbw702/FusioMR)
+
+
+# FusioMR in three sentences
+<!--edit-->
+FusioMR is a Mendelian Randomization methods using genome-wide summary statistics. FusioMR is a Flexible, Unified, and verSatile MR framework Integrating diverse strategies to support joint analysis of multiple Outcomes. Using a Bayesian hierarchical model with designed priors, FusioMR outperforms than other existing methods especially with limited instruments. 
+
+# Introduction to FusioMR
+<!--edit-->
+In the following, we provide a brief tutorial of our FusioMR model including the basics of Mendelian Randomization methods, the motivation of the model, and the overview of model. You can more tutorial of the software in Software Tutorial tab. You can find applications of the model with real data in Data Analysis tab. 
+
+## Basics of Mendelian Randomization
+<!--edit-->
+
+## Motivation of FusioMR
+<!--edit-->
+
+## Overview of FusioMR
+<!--edit-->
+
+# References
+<!--edit-->
+

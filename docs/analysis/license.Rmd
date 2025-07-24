@@ -1,0 +1,11 @@
+---
+title: "License"
+output:
+  workflowr::wflow_html:
+    toc: true
+editor_options:
+  chunk_output_type: console
+---
+<!--edit-->
+
+This software is licensed under  
