@@ -15,7 +15,7 @@ Here are some useful links:
  
  [Software](https://github.com/kangbw702/FusioMR)
  
- [Slides](.pdf)<!--edit-->
+ [Slides](.pdf)<!--edit--> 
 
 
 # FusioMR in three sentences
