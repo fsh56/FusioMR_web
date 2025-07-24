@@ -21,4 +21,4 @@ output:
     theme: cosmo
     highlight: textmate
     css: style.css
-baseurl: "/FusioMR_web"
+    baseurl: "/FusioMR_web"
